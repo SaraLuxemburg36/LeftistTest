@@ -1,0 +1,97 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e font */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Sezione principale */
+main {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pulsanti */
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Colori dei pulsanti */
+button[data-value="3"] {
+    background-color: #1b5e20;
+    color: white;
+}
+
+button[data-value="2"] {
+    background-color: #4caf50;
+    color: white;
+}
+
+button[data-value="1"] {
+    background-color: #8bc34a;
+    color: white;
+}
+
+button[data-value="0"] {
+    background-color: #9e9e9e;
+    color: white;
+}
+
+button[data-value="-1"] {
+    background-color: #ff9800;
+    color: white;
+}
+
+button[data-value="-2"] {
+    background-color: #f44336;
+    color: white;
+}
+
+button[data-value="-3"] {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
