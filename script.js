@@ -125,14 +125,23 @@ let currentQuestionIndex = 0;
 let answers = [];
 
 const startButton = document.getElementById('start-button');
+const subtitle = document.getElementById('subtitle');
+const questionContainer = document.getElementById('question-container');
+const title = document.getElementById('title');
+
 startButton.addEventListener('click', () => {
     startButton.style.display = 'none';
+    subtitle.style.display = 'none'; // elimina il sottotitolo durante le domande
+    questionContainer.style.display = 'block';
+    title.style.marginBottom = "10px"; // sposta più vicino in alto
     loadQuestion(currentQuestionIndex);
 });
 
 function loadQuestion(index) {
     const question = questions[index];
+    document.getElementById('question-number').textContent = `Domanda ${index + 1} di ${questions.length}`;
     document.getElementById('question-text').textContent = question.text;
+
     const answersContainer = document.getElementById('answers');
     answersContainer.innerHTML = '';
 
@@ -153,10 +162,12 @@ function loadQuestion(index) {
 }
 
 function showResults() {
+    const questionNumber = document.getElementById('question-number');
     const questionText = document.getElementById('question-text');
     const answersContainer = document.getElementById('answers');
 
-    const totalScore = answers.reduce((a, b) => a + b, 0);
+    questionNumber.textContent = "";
     questionText.textContent = "Risultato del test";
-    answersContainer.innerHTML = `<p>Punteggio totale: ${totalScore}</p>`;
+    answersContainer.innerHTML = `<p>Punteggio totale: ${answers.reduce((a, b) => a + b, 0)}</p>`;
 }
+
