@@ -10,12 +10,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>LeftistTest</h1>
-            <p>Scopri quale corrente di sinistra rappresenta meglio le tue opinioni.</p>
+            <h1 id="title">LeftistTest</h1>
+            <p id="subtitle">Questo test ti aiuta a trovare la tua posizione ideologica nello spettro politico della sinistra. Rispondi con sincerità e, soprattutto, divertiti!</p>
         </header>
         <main>
-            <section id="question-container">
-                <h2 id="question-text"></h2> <!-- aggiunto per mostrare le domande -->
+            <section id="question-container" style="display: none;">
+                <h2 id="question-number"></h2> <!-- numero della domanda -->
+                <h2 id="question-text"></h2>
                 <div id="answers"></div>
             </section>
             <footer>
@@ -26,5 +27,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
