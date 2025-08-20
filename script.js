@@ -135,4 +135,28 @@ function loadQuestion(index) {
     document.getElementById('question-text').textContent = question.text;
     const answersContainer = document.getElementById('answers');
     answersContainer.innerHTML = '';
-    question.answers.forEach
+
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.textContent = answer.text;
+        button.addEventListener('click', () => {
+            answers.push(answer.value);
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion(currentQuestionIndex);
+            } else {
+                showResults();
+            }
+        });
+        answersContainer.appendChild(button);
+    });
+}
+
+function showResults() {
+    const questionText = document.getElementById('question-text');
+    const answersContainer = document.getElementById('answers');
+
+    const totalScore = answers.reduce((a, b) => a + b, 0);
+    questionText.textContent = "Risultato del test";
+    answersContainer.innerHTML = `<p>Punteggio totale: ${totalScore}</p>`;
+}
